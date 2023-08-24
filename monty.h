@@ -1,6 +1,8 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#define _GNU_SOURCE
+
 /* Included librairies */
 
 #include <stdio.h>
@@ -81,5 +83,8 @@ void pint(stack_t **stack, unsigned int line_number);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int isascii(int c);
 int _isdigit(char *string);
-
+int is_delimiter(char c, const char *delim);
+size_t _strlen(const char *str);
+int _strcmp(char *s1, char *s2);
+char *_strtok(char *str, char *delim);
 #endif
