@@ -1,5 +1,7 @@
 #include "monty.h"
 
+gvar var;
+
 /**
  * check_input - Procced to the first verification:
  * @ac: Argument count
