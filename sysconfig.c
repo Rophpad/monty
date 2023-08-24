@@ -26,7 +26,7 @@ int init_var(gvar *var)
  */
 instruction_t *init_instructions(void)
 {
-	instruction_t *all = malloc(sizeof(instruction_t) * 2);
+	instruction_t *all = malloc(sizeof(instruction_t) * 18);
 
 	if (!all)
 	{
@@ -36,7 +36,9 @@ instruction_t *init_instructions(void)
 
 	all[0].opcode = "pall", all[0].f = pall;
 	all[1].opcode = "push", all[1].f = push;
-	/*all[2].opcode = "pint", all[2].f = pint;*/
+	all[2].opcode = "pint", all[2].f = pint;
+	all[3].opcode = "pop", all[3].f = pop;
+	all[4].opcode = NULL, all[4].f = NULL;
 
 	return (all);
 }

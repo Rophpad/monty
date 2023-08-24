@@ -78,7 +78,7 @@ void free_all(void);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
-
+void pop(stack_t **stack, unsigned int line_number);
 /* additionnal functions */
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 /*int isascii(int c);*/
@@ -86,5 +86,6 @@ int _isdigit(char *string);
 int is_delimiter(char c, const char *delim);
 size_t _strlen(const char *str);
 int _strcmp(char *s1, char *s2);
-char *_strtok(char *str, char *delim);
+/*char *_strtok(char *str, char *delim);*/
+
 #endif
