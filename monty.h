@@ -89,7 +89,7 @@ void pchar(stack_t **stack, unsigned int line_number);
 
 /* additionnal functions */
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-int isascii(int c);
+/*int isascii(int c);*/
 int _isdigit(char *string);
 int is_delimiter(char c, const char *delim);
 size_t _strlen(const char *str);

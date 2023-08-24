@@ -41,6 +41,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		free_all();
 		exit(EXIT_FAILURE);
 	}
+
 	if (isascii(s->n))
 	{
 		printf("%c\n", s->n);
