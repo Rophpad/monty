@@ -54,7 +54,7 @@ int get_funct(gvar *var, char *opcode)
 
 	while (entry->opcode)
 	{
-		if (_strcmp(opcode, entry->opcode) == 0)
+		if (strcmp(opcode, entry->opcode) == 0)
 		{
 			if (!entry->f)
 				return (EXIT_SUCCESS);
@@ -63,7 +63,7 @@ int get_funct(gvar *var, char *opcode)
 		}
 		entry++;
 	}
-	if (_strlen(opcode) != 0 && opcode[0] != '#')
+	if (strlen(opcode) != 0 && opcode[0] != '#')
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 				var->line_number, opcode);
