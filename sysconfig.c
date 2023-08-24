@@ -39,7 +39,8 @@ instruction_t *init_instructions(void)
 	all[2].opcode = "pint", all[2].f = pint;
 	all[3].opcode = "pop", all[3].f = pop;
 	all[4].opcode = "swap", all[4].f = swap;
-	all[5].opcode = NULL, all[5].f = NULL;
+	all[5].opcode = "add", all[5].f = add;
+	all[6].opcode = NULL, all[6].f = NULL;
 
 	return (all);
 }
