@@ -40,7 +40,8 @@ instruction_t *init_instructions(void)
 	all[3].opcode = "pop", all[3].f = pop;
 	all[4].opcode = "swap", all[4].f = swap;
 	all[5].opcode = "add", all[5].f = add;
-	all[6].opcode = NULL, all[6].f = NULL;
+	all[6].opcode = "nop", all[6].f = NULL;
+	all[7].opcode = NULL, all[7].f = NULL;
 
 	return (all);
 }
