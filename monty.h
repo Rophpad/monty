@@ -1,8 +1,18 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
-/* data structures */
+/* Included librairies */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <ctype.h>
+#include <string.h>
+
+/* data structures */
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -32,5 +42,44 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct globals - global variable to use
+ * @file: file name
+ * @buff: Buffer for getline function
+ * @size: Counter for getline
+ * @dict: instruction dict
+ * @head: Head of the list
+ * @line_number: Current line number
+ * @MODE: Program config stack or queue
+ */
+typedef struct globals
+{
+	FILE *file;
+	char *buff;
+	size_t size;
+	instruction_t *dict;
+	stack_t *head;
+	unsigned int line_number;
+	int MODE;
+} gvar;
+
+extern gvar var;
+
+/* sysconfig functions */
+int init_var(gvar *var);
+instruction_t *init_instructions(void);
+int get_funct(gvar *var, char *opcode);
+void free_all(void);
+
+/* opcode functions */
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+
+/* additionnal functions */
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+int isascii(int c);
+int _isdigit(char *string);
 
 #endif
