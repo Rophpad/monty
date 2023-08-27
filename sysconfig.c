@@ -46,7 +46,8 @@ instruction_t *init_instructions(void)
 	all[9].opcode = "mul", all[9].f = mul;
 	all[10].opcode = "mod", all[10].f = mod;
 	all[11].opcode = "pchar", all[11].f = pchar;
-	all[12].opcode = NULL, all[12].f = NULL;
+	all[12].opcode = "pstr", all[12].f = pstr;
+	all[13].opcode = NULL, all[13].f = NULL;
 
 	return (all);
 }
