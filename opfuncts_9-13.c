@@ -77,3 +77,23 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 	putchar('\n');
 }
+/**
+ * rotl - s
+ * @stack: Double linked list
+ * @line_number: File line execution
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *s = *stack, *tm = *stack;
+	(void) line_number;
+
+	if (!stack || !s || s->next)
+		return;
+	s->next->prev = NULL;
+	while (tm->next)
+		tm = tm->next;
+	tm->next = s;
+	s = s->next;
+	tm->next->next = NULL;
+	tm->next->prev = tm;
+}
