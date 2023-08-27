@@ -49,7 +49,10 @@ instruction_t *init_instructions(void)
 	all[12].opcode = "pstr", all[12].f = pstr;
 	all[13].opcode = "rotl", all[13].f = rotl;
 	all[14].opcode = "rotr", all[14].f = rotr;
-	all[15].opcode = NULL, all[15].f = NULL;
+	all[15].opcode = "stack", all[15].f = stack;
+	all[16].opcode = "queue", all[16].f = queue;
+	all[17].opcode = NULL, all[17].f = NULL;
+
 
 	return (all);
 }
